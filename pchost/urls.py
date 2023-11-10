@@ -16,8 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from check_onboarded import is_onboarded
+
+user_onboarded = is_onboarded()
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("onboarding.urls"))
+    path("", include("onboarding.urls")),
 ]
+
+if user_onboarded:
+    urlpatterns.append(path("", include("onboarding.urls")))
+else:
+    urlpatterns.append(path("", include("onboarding.urls")))
