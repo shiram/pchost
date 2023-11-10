@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from check_onboarded import is_onboarded
+from .check_onboarded import is_onboarded
 
 user_onboarded = is_onboarded()
 
