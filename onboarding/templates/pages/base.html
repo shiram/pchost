@@ -10,11 +10,14 @@
     {% endblock %}
 
     <link rel="stylesheet" href="{% static 'css/bulma/bulma.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   </head>
   <body>
-  {% block content %}
+    <main>
+      {% block content %}
   
-  {% endblock %}
+      {% endblock %}
+    </main>
   </body>
 </html>
