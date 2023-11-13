@@ -1,16 +1,63 @@
+
 {% extends "pages/base.html" %}
+{% load static %}
 
 {% block content %}
 
-<section class="section">
-    <div class="container">
-      <h1 class="title">
-        Register
-      </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
-      </p>
+<div class="columns">
+
+  <div class="column">
+    
+  </div>
+
+  <div class="column">
+    <div class="box">
+      <p class="title is-4 centered-title">FIRST TIME SETUP</p>
+      <p class="subtitle is-6 centered-title">Please fill in the form below</p>
+
+      <form action="{% url 'onboard' %}" method="post">
+        {% csrf_token %}
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <input class="input" type="text" name="first_name" placeholder="First Name" required>
+            </div>
+            <div class="field">
+              <input class="input" type="text" name="last_name" placeholder="Last Name" required>
+            </div>
+          </div>
+        </div>
+  
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <input class="input" type="text" name="username" placeholder="User Name" required>
+            </div>
+            <div class="field">
+              <input class="input" type="email" name="email" placeholder="Email" required>
+            </div>
+          </div>
+        </div>
+  
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <input class="input" type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="field">
+              <input class="input" type="password" placeholder="Confirm Password" required>
+            </div>
+          </div>
+        </div>
+        
+        <div class="field">
+          <input type="submit" class="button is-primary is-small is-fullwidth">
+        </div>
+      </form>
+
     </div>
-</section>
+  </div>
+
+</div>
 
 {% endblock %}
